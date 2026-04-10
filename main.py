@@ -16,12 +16,19 @@ def load_config(path: str) -> dict:
         return yaml.safe_load(f)
 
 
+def has_image_files(directory):
+    """Check if a directory contains any .png image files."""
+    if not os.path.isdir(directory):
+        return False
+    return any(f.endswith(".png") for f in os.listdir(directory))
+
+
 def validate_real_data(classes):
     """Check that real data exists for all classes. Exit if missing."""
     missing = []
     for cls in classes:
         class_dir = os.path.join("data", "real_data", cls)
-        if not os.path.isdir(class_dir) or not os.listdir(class_dir):
+        if not has_image_files(class_dir):
             missing.append(class_dir)
 
     if missing:
@@ -39,7 +46,7 @@ def ensure_synthetic_data(classes):
     missing = False
     for cls in classes:
         class_dir = os.path.join("data", "synthetic", cls)
-        if not os.path.isdir(class_dir) or not os.listdir(class_dir):
+        if not has_image_files(class_dir):
             missing = True
             break
 

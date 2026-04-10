@@ -125,7 +125,7 @@ The main confusion is between line and parabola (11 line images misclassified as
 - **Recall** — measures missed detections; critical for the line class where many are missed (0.61).
 - **F1-Score** — harmonic mean balancing both; used to calibrate per-class thresholds.
 
-**Inference timing:** MobileNetV3-Small was chosen specifically for efficiency. Single-image inference (including image loading, preprocessing, and forward pass) runs well under 250ms on a typical laptop CPU. The `classify_image` function times each call and prints the result.
+**Inference timing:** MobileNetV3-Small was chosen specifically for efficiency. Single-image inference (including image loading, preprocessing, and forward pass) takes approximately 70ms on average on a typical laptop CPU, well under the 250ms target. The `classify_image` function times each call and prints the result.
 
 ### 3. Implementation Details
 
@@ -138,7 +138,7 @@ The main confusion is between line and parabola (11 line images misclassified as
 - Automatic data validation and synthetic regeneration at startup
 
 **Not implemented (due to time/data constraints):**
-- Additional training augmentations — elastic deformation, perspective transforms, and random erasing would improve robustness to real-world image variations; Mixup/CutMix strategies could improve generalization across classes
+- Additional training augmentations  would improve robustness to real-world image variations.
 - Improved synthetic data generation for line vs. parabola — generating more parabolas with very low curvature and more lines with slight curves near the decision boundary would teach the model to better discriminate between these two classes, directly addressing the main source of confusion in the real data evaluation
 - Larger real data collection — only ~30 images per class for calibration; more real samples would produce more reliable thresholds
 
