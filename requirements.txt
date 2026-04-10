@@ -1,0 +1,11 @@
+torch
+torchvision
+pytorch-lightning
+torchmetrics
+numpy
+pyyaml
+tqdm
+scikit-learn
+matplotlib
+Pillow
+opencv-python-headless

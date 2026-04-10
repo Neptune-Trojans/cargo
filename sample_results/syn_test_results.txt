@@ -1,0 +1,17 @@
+TEST RESULTS
+==================================================
+
+              precision    recall  f1-score   support
+
+        line       1.00      0.99      0.99        90
+    parabola       0.99      1.00      1.00       109
+        sine       1.00      1.00      1.00       101
+
+    accuracy                           1.00       300
+   macro avg       1.00      1.00      1.00       300
+weighted avg       1.00      1.00      1.00       300
+
+Confusion Matrix:
+[[ 89   1   0]
+ [  0 109   0]
+ [  0   0 101]]

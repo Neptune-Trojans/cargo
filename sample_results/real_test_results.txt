@@ -1,0 +1,22 @@
+REAL DATA EVALUATION
+==================================================
+
+Per-class confidence thresholds:
+  line: 0.038
+  parabola: 0.459
+  sine: 0.933
+
+              precision    recall  f1-score   support
+
+        line       0.87      0.61      0.71        33
+    parabola       0.71      0.90      0.79        30
+        sine       0.93      1.00      0.97        28
+
+    accuracy                           0.82        91
+   macro avg       0.84      0.84      0.82        91
+weighted avg       0.84      0.82      0.82        91
+
+Confusion Matrix:
+[[20 11  2]
+ [ 3 27  0]
+ [ 0  0 28]]
